@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Week 1 Starter — Canvas &amp; Clear Color</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="gl-canvas"></canvas>
+    <script>
+      const canvas = document.getElementById("gl-canvas");
+      const gl = canvas.getContext("webgl2");
+
+      if (!gl) {
+        throw new Error("WebGL2 is not available on this device/browser.");
+      }
+
+      function resizeCanvasToDisplaySize() {
+        const dpr = window.devicePixelRatio || 1;
+        const width = Math.round(canvas.clientWidth * dpr);
+        const height = Math.round(canvas.clientHeight * dpr);
+        if (canvas.width !== width || canvas.height !== height) {
+          canvas.width = width;
+          canvas.height = height;
+        }
+      }
+
+      function render() {
+        resizeCanvasToDisplaySize();
+        gl.viewport(0, 0, canvas.width, canvas.height);
+
+        // TODO(student): try changing these values
+        // Used https://www.w3schools.com/jsref/met_win_settimeout.asp to help understand aspects of setTimeout and setInterval
+        setInterval(() => {
+          setTimeout(() => {
+            gl.clearColor(0.1, 0.15, 0.35, 1.0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            console.log("Current RGB:", gl.getParameter(gl.COLOR_CLEAR_VALUE));
+          }, 1000);
+
+          setTimeout(() => {
+            gl.clearColor(0.15, 0.35, 0.1, 1.0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            console.log("Current RGB:", gl.getParameter(gl.COLOR_CLEAR_VALUE));
+          }, 2000);
+
+          setTimeout(() => {
+            gl.clearColor(0.35, 0.1, 0.15, 1.0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            console.log("Current RGB:", gl.getParameter(gl.COLOR_CLEAR_VALUE));
+          }, 3000);
+        }, 3000);
+      }
+
+      window.addEventListener("resize", render);
+      render();
+      //   setInterval(render, 3000);
+    </script>
+  </body>
+</html>
