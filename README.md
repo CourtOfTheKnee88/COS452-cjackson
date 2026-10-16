@@ -30,3 +30,7 @@
 ### Week 06
 
 [https://courtoftheknee88.github.io/COS452-cjackson/week06/](https://courtoftheknee88.github.io/COS452-cjackson/week06/)
+
+### Week 06
+
+[https://courtoftheknee88.github.io/COS452-cjackson/week07/](https://courtoftheknee88.github.io/COS452-cjackson/week07/)
