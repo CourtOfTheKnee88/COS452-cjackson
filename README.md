@@ -38,3 +38,7 @@
 ### Week 08
 
 [https://courtoftheknee88.github.io/COS452-cjackson/week08/](https://courtoftheknee88.github.io/COS452-cjackson/week08/)
+
+### Week 09
+
+[https://courtoftheknee88.github.io/COS452-cjackson/week09/](https://courtoftheknee88.github.io/COS452-cjackson/week09/)
